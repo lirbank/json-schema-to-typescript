@@ -21,8 +21,7 @@
     "prepublishOnly": "npm test",
     "pretest": "npm run build",
     "watch": "tsc -w",
-    "watch:test": "ava -w",
-    "postinstall": "tsc"
+    "watch:test": "ava -w"
   },
   "repository": {
     "type": "git",
