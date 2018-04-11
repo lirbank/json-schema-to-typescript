@@ -1,7 +1,7 @@
 import { isPlainObject } from 'lodash'
 import { JSONSchema, SCHEMA_TYPE } from './types/JSONSchema'
 
-interface BSONSchema {
+export interface BSONSchema {
   type: 'date' | 'int' | 'bool' | 'decimal'
   allOf: JSONSchema['allOf']
   anyOf: JSONSchema['anyOf']
