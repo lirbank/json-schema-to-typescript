@@ -2,11 +2,11 @@
   "name": "json-schema-to-typescript",
   "version": "5.3.2",
   "description": "compile json schema to typescript typings",
-  "main": "dist/src/index.js",
+  "main": "dist/index.js",
   "bin": {
-    "json2ts": "dist/src/cli.js"
+    "json2ts": "dist/cli.js"
   },
-  "typings": "dist/src/index.d.ts",
+  "typings": "dist/index.d.ts",
   "engines": {
     "node": ">=4.5.0"
   },
