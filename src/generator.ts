@@ -10,6 +10,8 @@ import { log, toSafeString } from './utils'
 export function generate(ast: AST, options = DEFAULT_OPTIONS): string {
   return [
     options.bannerComment,
+    // TODO: Check the AST if Decimal128 is used before including the import
+    'import { Decimal128 } from "bson";',
     declareNamedTypes(ast, options),
     declareNamedInterfaces(ast, options, ast.standaloneName!),
     declareEnums(ast, options)
@@ -157,6 +159,11 @@ function generateType(ast: AST, options: Options): string {
       + ast.params.map(_ => generateType(_, options)).join(', ')
       + ']'
     case 'UNION': return generateSetOperation(ast, options)
+
+    // BSON Types
+    // https://docs.mongodb.com/manual/reference/operator/query/type/#available-types
+    case 'DATE': return 'Date'
+    case 'DECIMAL': return 'Decimal128'
   }
 }
 

@@ -194,6 +194,23 @@ function parseNonLiteral(
         standaloneName: standaloneName(schema, keyNameFromDefinition, usedNames),
         type: 'ARRAY'
       })
+
+    // BSON Types
+    // https://docs.mongodb.com/manual/reference/operator/query/type/#available-types
+    case 'DATE':
+      return set({
+        comment: schema.description,
+        keyName,
+        standaloneName: standaloneName(schema, keyNameFromDefinition, usedNames),
+        type: 'DATE'
+      })
+    case 'DECIMAL':
+      return set({
+        comment: schema.description,
+        keyName,
+        standaloneName: standaloneName(schema, keyNameFromDefinition, usedNames),
+        type: 'DECIMAL'
+      })
   }
 }
 

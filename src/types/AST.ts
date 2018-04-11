@@ -4,7 +4,7 @@ export type AST_TYPE = AST['type']
 
 export type AST = TAny | TArray | TBoolean | TEnum | TInterface | TNamedInterface
   | TIntersection | TLiteral | TNumber | TNull | TObject | TReference
-  | TString | TTuple | TUnion
+  | TString | TTuple | TUnion | TDate | TDecimal
 
 export interface AbstractAST {
   comment?: string
@@ -122,4 +122,12 @@ export const T_ANY: TAny = {
 export const T_ANY_ADDITIONAL_PROPERTIES: TAny & ASTWithName = {
   keyName: '[k: string]',
   type: 'ANY'
+}
+
+export interface TDate extends AbstractAST {
+  type: 'DATE'
+}
+
+export interface TDecimal extends AbstractAST {
+  type: 'DECIMAL'
 }

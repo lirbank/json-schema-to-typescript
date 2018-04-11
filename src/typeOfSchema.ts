@@ -1,10 +1,24 @@
 import { isPlainObject } from 'lodash'
 import { JSONSchema, SCHEMA_TYPE } from './types/JSONSchema'
 
+interface BSONSchema {
+  type: 'date' | 'int' | 'bool' | 'decimal'
+  allOf: JSONSchema['allOf']
+  anyOf: JSONSchema['anyOf']
+  oneOf: JSONSchema['oneOf']
+  items: JSONSchema['items']
+  enum: JSONSchema['enum']
+  tsEnumNames: JSONSchema['tsEnumNames']
+  $ref: JSONSchema['$ref']
+  properties: JSONSchema['properties']
+  default: JSONSchema['default']
+  id: JSONSchema['id']
+}
+
 /**
  * Duck types a JSONSchema schema or property to determine which kind of AST node to parse it into.
  */
-export function typeOfSchema(schema: JSONSchema): SCHEMA_TYPE {
+export function typeOfSchema(schema: JSONSchema | BSONSchema): SCHEMA_TYPE {
   if (schema.allOf) return 'ALL_OF'
   if (schema.anyOf) return 'ANY_OF'
   if (schema.oneOf) return 'ONE_OF'
@@ -26,6 +40,13 @@ export function typeOfSchema(schema: JSONSchema): SCHEMA_TYPE {
     case 'array': return 'UNTYPED_ARRAY'
     case 'null': return 'NULL'
     case 'any': return 'ANY'
+
+    // BSON Types
+    // https://docs.mongodb.com/manual/reference/operator/query/type/#available-types
+    case 'date': return 'DATE'
+    case 'int': return 'NUMBER'
+    case 'bool': return 'BOOLEAN'
+    case 'decimal': return 'DECIMAL'
   }
 
   switch (typeof schema.default) {
