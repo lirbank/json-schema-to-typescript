@@ -18,7 +18,7 @@
     "lint": "tslint -c tslint.json src/*.ts",
     "tdd": "concurrently -r -p '' -k 'npm run watch' 'npm run watch:test'",
     "test": "ava --verbose",
-    "prepublishOnly": "npm run build:server",
+    "postinstall": "npm run build:server",
     "pretest": "npm run build",
     "watch": "tsc -w",
     "watch:test": "ava -w"
@@ -60,7 +60,7 @@
     "mz": "^2.7.0",
     "prettier": "^1.8.2",
     "stdin": "0.0.1",
-    "typescript": "^2.6.1"
+    "typescript": "^2.8.1"
   },
   "devDependencies": {
     "ava": "^0.23.0",
