@@ -2,7 +2,7 @@ import { isPlainObject } from 'lodash'
 import { JSONSchema, SCHEMA_TYPE } from './types/JSONSchema'
 
 export interface BSONSchema {
-  type: 'date' | 'int' | 'bool' | 'decimal'
+  type: 'date' | 'int' | 'bool' | 'decimal' | 'long'
   allOf: JSONSchema['allOf']
   anyOf: JSONSchema['anyOf']
   oneOf: JSONSchema['oneOf']
@@ -47,6 +47,7 @@ export function typeOfSchema(schema: JSONSchema | BSONSchema): SCHEMA_TYPE {
     case 'int': return 'NUMBER'
     case 'bool': return 'BOOLEAN'
     case 'decimal': return 'DECIMAL'
+    case 'long': return 'LONG'
   }
 
   switch (typeof schema.default) {

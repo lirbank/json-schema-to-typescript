@@ -211,6 +211,13 @@ function parseNonLiteral(
         standaloneName: standaloneName(schema, keyNameFromDefinition, usedNames),
         type: 'DECIMAL'
       })
+    case 'LONG':
+      return set({
+        comment: schema.description,
+        keyName,
+        standaloneName: standaloneName(schema, keyNameFromDefinition, usedNames),
+        type: 'LONG'
+      })
   }
 }
 

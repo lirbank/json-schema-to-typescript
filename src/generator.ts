@@ -164,6 +164,7 @@ function generateType(ast: AST, options: Options): string {
     // https://docs.mongodb.com/manual/reference/operator/query/type/#available-types
     case 'DATE': return 'Date'
     case 'DECIMAL': return 'Decimal128'
+    case 'LONG': return 'number'
   }
 }
 
