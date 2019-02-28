@@ -19,7 +19,7 @@
     "tdd": "concurrently -r -p '' -k 'npm run watch' 'npm run watch:test'",
     "test": "ava --verbose",
     "_prepublishOnly": "npm test",
-    "postinstall": "npm run build:server",
+    "_postinstall": "npm run build:server",
     "pretest": "npm run build",
     "watch": "tsc -w",
     "watch:test": "ava -w"
