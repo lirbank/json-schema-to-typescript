@@ -4,9 +4,8 @@ export type AST_TYPE = AST['type']
 
 export type AST = TAny | TArray | TBoolean | TEnum | TInterface | TNamedInterface
   | TIntersection | TLiteral | TNumber | TNull | TObject | TReference
-  | TString | TTuple | TUnion
+  | TString | TTuple | TUnion | TCustomType
   | TDate | TDecimal | TLong
-  | TCustomType
 
 export interface AbstractAST {
   comment?: string
