@@ -3,5 +3,7 @@ npm-debug.log
 node_modules
 *.js
 *.map
-dist/
+dist/test/
+dist/src/*
+!dist/src/types/
 dist_tests/
