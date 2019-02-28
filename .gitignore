@@ -5,5 +5,5 @@ node_modules
 *.map
 dist/test/
 dist/src/*
-!dist/src/types/
+!dist/src/*.d.ts
 dist_tests/
