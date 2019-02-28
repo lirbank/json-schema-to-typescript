@@ -5,7 +5,7 @@ node_modules
 *.map
 example
 test
-dist/test
+___dist/test
 circle.yml
 ARCHITECTURE.md
 CONTRIBUTING.md
