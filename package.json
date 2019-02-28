@@ -2,11 +2,11 @@
   "name": "json-schema-to-typescript",
   "version": "6.1.1",
   "description": "compile json schema to typescript typings",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "bin": {
-    "json2ts": "dist/cli.js"
+    "json2ts": "dist/src/cli.js"
   },
-  "typings": "dist/index.d.ts",
+  "typings": "dist/src/index.d.ts",
   "engines": {
     "node": ">=4.5.0"
   },
@@ -18,7 +18,7 @@
     "lint": "tslint -c tslint.json src/*.ts",
     "tdd": "concurrently -r -p '' -k 'npm run watch' 'npm run watch:test'",
     "test": "ava --verbose",
-    "postinstall": "npm run build:server",
+    "prepublishOnly": "npm test",
     "pretest": "npm run build",
     "watch": "tsc -w",
     "watch:test": "ava -w"
