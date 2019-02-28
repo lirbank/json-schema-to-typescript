@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "declaration": false,
-    "lib": ["es2015", "esnext", "dom"],
+    "lib": [
+      "es2015"
+    ],
     "module": "commonjs",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
@@ -11,12 +13,10 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es5",
-    "rootDir": "src"
+    "target": "es5"
   },
   "exclude": [
     "example",
-    "node_modules",
-    "test"
+    "node_modules"
   ]
 }
