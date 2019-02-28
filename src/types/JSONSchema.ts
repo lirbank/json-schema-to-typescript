@@ -3,9 +3,8 @@ import { JSONSchema4 } from 'json-schema'
 export type SCHEMA_TYPE = 'ALL_OF' | 'UNNAMED_SCHEMA' | 'ANY' | 'ANY_OF'
   | 'BOOLEAN' | 'NAMED_ENUM' | 'NAMED_SCHEMA' | 'NULL' | 'NUMBER' | 'STRING'
   | 'OBJECT' | 'ONE_OF' | 'TYPED_ARRAY' | 'REFERENCE' | 'UNION' | 'UNNAMED_ENUM'
-  | 'UNTYPED_ARRAY'
+  | 'UNTYPED_ARRAY' | 'CUSTOM_TYPE'
   | 'DATE' | 'DECIMAL' | 'LONG'
-  | 'CUSTOM_TYPE'
 
 export interface JSONSchema extends JSONSchema4 {
   /**
