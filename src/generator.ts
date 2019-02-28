@@ -164,13 +164,13 @@ function generateType(ast: AST, options: Options): string {
       + ast.params.map(_ => generateType(_, options)).join(', ')
       + ']'
     case 'UNION': return generateSetOperation(ast, options)
+    case 'CUSTOM_TYPE': return ast.params
 
     // BSON Types
     // https://docs.mongodb.com/manual/reference/operator/query/type/#available-types
     case 'DATE': return 'Date'
     case 'DECIMAL': return 'Decimal128'
     case 'LONG': return 'number'
-    case 'CUSTOM_TYPE': return ast.params
   }
 }
 
