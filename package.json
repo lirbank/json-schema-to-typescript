@@ -18,7 +18,7 @@
     "lint": "tslint -c tslint.json src/*.ts",
     "tdd": "concurrently -r -p '' -k 'npm run watch' 'npm run watch:test'",
     "test": "ava --verbose",
-    "prepublishOnly": "npm test",
+    "_prepublishOnly": "npm test",
     "postinstall": "npm run build:server",
     "pretest": "npm run build",
     "watch": "tsc -w",
