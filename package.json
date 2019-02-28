@@ -1,6 +1,6 @@
 {
   "name": "json-schema-to-typescript",
-  "version": "5.4.0",
+  "version": "6.1.1",
   "description": "compile json schema to typescript typings",
   "main": "dist/index.js",
   "bin": {
@@ -45,30 +45,30 @@
   },
   "homepage": "https://github.com/bcherny/json-schema-to-typescript#readme",
   "dependencies": {
-    "@types/cli-color": "0.3.29",
-    "@types/json-schema": "4.0.0",
-    "@types/lodash": "4.14.88",
-    "@types/minimist": "1.2.0",
+    "@types/cli-color": "^0.3.29",
+    "@types/json-schema": "^7.0.1",
+    "@types/lodash": "^4.14.118",
+    "@types/minimist": "^1.2.0",
     "@types/mz": "0.0.32",
-    "@types/node": "8.0.50",
-    "@types/prettier": "1.7.2",
-    "cli-color": "1.2.0",
-    "json-schema-ref-parser": "4.0.4",
-    "json-stringify-safe": "5.0.1",
-    "lodash": "4.17.4",
-    "minimist": "1.2.0",
-    "mz": "2.7.0",
-    "prettier": "1.8.2",
-    "stdin": "0.0.1",
-    "typescript": "2.8.1"
+    "@types/node": "^10.12.6",
+    "@types/prettier": "^1.13.2",
+    "cli-color": "^1.4.0",
+    "json-schema-ref-parser": "^6.0.2",
+    "json-stringify-safe": "^5.0.1",
+    "lodash": "^4.17.11",
+    "minimist": "^1.2.0",
+    "mz": "^2.7.0",
+    "prettier": "^1.15.2",
+    "stdin": "0.0.1"
   },
   "devDependencies": {
-    "ava": "^0.23.0",
-    "browserify": "^14.5.0",
-    "concurrently": "^3.5.0",
-    "shx": "^0.2.2",
-    "tsify": "^3.0.3",
-    "tslint": "^5.8.0"
+    "ava": "^0.25.0",
+    "browserify": "^16.2.3",
+    "concurrently": "^4.0.1",
+    "shx": "^0.3.2",
+    "tsify": "^4.0.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6"
   },
   "ava": {
     "files": [

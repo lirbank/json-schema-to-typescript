@@ -6,6 +6,7 @@ export type AST = TAny | TArray | TBoolean | TEnum | TInterface | TNamedInterfac
   | TIntersection | TLiteral | TNumber | TNull | TObject | TReference
   | TString | TTuple | TUnion
   | TDate | TDecimal | TLong
+  | TCustomType
 
 export interface AbstractAST {
   comment?: string
@@ -112,6 +113,11 @@ export interface TTuple extends AbstractAST {
 export interface TUnion extends AbstractAST {
   type: 'UNION'
   params: AST[]
+}
+
+export interface TCustomType extends AbstractAST {
+  type: 'CUSTOM_TYPE'
+  params: string
 }
 
 ////////////////////////////////////////////     literals
